@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+//async =promise return krega
+//async functions allow you to write promise-based code as if it were synchronous
+//but without blocking the main thread.
+//they make asynchronous colde less lever
+async function logFetch(url)
+{
+    try{
+        //await
+        const response=await fetch(url);
+        //agr console mein await nhi likhenge toh vo error deta
+        console.log(await response.text());
+    }
+    catch (err)
+    {
+        console.log('fetch failed',err);
+    }
+}
+logFetch('https://reqres.in/api/users/2');
+</script>
+
+
+

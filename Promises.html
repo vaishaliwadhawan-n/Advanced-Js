@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+//  .then = promise chain(then ko ek chain mein likhte hain agr usko kuch lines ke baad likhenge toh vo nhi chl paega)
+//Example of promise chain
+// function logFetch(url)
+// {
+//     return fetch(url)
+//     .then(response=>response.text())
+//     .then(text=>
+//     {
+//         console.log(text);
+//     })
+//     .catch(error=>
+//     {
+//         console.log('fetch falied',error);
+//     });
+// }
+// logFetch('https://reqres.in/api/users/2');
+//create promises
+var getPromises=new Promise(function(resolve,reject)
+{
+    var check=false;
+    //true=Success,False=Error
+    if(check)
+    {
+        //call resolve if everyhting is ok
+       // resolve();
+                //resolve with parameters
+        resolve('Everything is ok');
+    }
+    else
+    {
+        //reject();
+        //reject with parameters
+        reject('Something is fishy');
+    }
+});
+getPromises.then(function(resolveMessage)
+{
+        //catch will be invoked when resolve happens
+console.log('Success');
+console.log(resolveMessage);
+}).catch(function(resolveMessage)
+{
+    //catch will be invoked when reject happens
+console.log('Error');
+console.log(resolveMessage);
+});
+</script>
+
+</body>
+</html>

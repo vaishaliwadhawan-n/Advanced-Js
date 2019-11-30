@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- <button onclick="scope()">Scope</button> -->
+<script>
+//by object literal
+function Person(first, last, age, gender, interests) {
+  
+  // property and method definitions
+  this.name = {
+    'first': first,
+    'last' : last
+  };
+  this.age = age;
+  this.gender = gender;
+}
+let person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+person1.valueOf()
+Person.prototype
+Object.prototype
+let myString = 'This is my string.';
+let person2 = Object.create(person1);
+person2.__proto__
+person1.constructor
+person2.constructor
+let person3 = new person1.constructor('Karen', 'Stephenson', 26, 'female', ['playing drums', 'mountain climbing']);
+// person3.name.first
+// person3.age
+// person3.bio()
+// instanceName.constructor.name
+// person1.constructor.name
+Person.prototype.farewell = function() {
+  alert(this.name + ' has left the building. Bye for now!');
+};
+person1.farewell();
+function Person(first, last, age, gender, interests) {
+// property and method definitions
+}
+// let person1 = new Person('Tammi', 'Smith', 32, 'neutral', ['music', 'skiing', 'kickboxing']);
+// Person.prototype.farewell = function() {
+// alert(this.name.first + ' has left the building. Bye for now!');
+// }
+// Person.prototype.fullName = 'Bob Smith';
+// Person.prototype.fullName = this.name.first + ' ' + this.name.last;
+</script>
+
+</body>
+</html>

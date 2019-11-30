@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <p id="OOPS "></p>
+
+
+
+<script>
+
+
+
+class Person{
+    constructor(first, last, age, gender, interests) {
+    this.name = {
+      first,
+      last
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+  }
+};
+  let Person1 =new Person('hgsd','sdf','34','szfdsdz',['music','sdfs','vxdf']);
+  
+  class Teacher extends Person {
+    constructor(first,last,age,gender,subject, grade) {
+    super(first,last,age,gender);
+      this.subject = subject;
+      this.grade = grade;
+    }
+  }    
+
+  let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 5);
+  
+  function greeting(name) {
+    alert('Hello ' + name);
+  }
+  
+  function processUserInput(callback) {
+    var name = prompt('Please enter your name.');
+    callback(name);
+  }
+  
+  processUserInput(greeting);
+  </script>
